@@ -13,7 +13,7 @@
 In today's rapidly evolving business environment, understanding workforce trends is crucial for strategic decision-making. Layoffs have significant implications for companies, employees, and the broader economy. This project analyzes a comprehensive dataset of layoffs across various industries and locations to uncover patterns and insights that can inform better workforce management strategies. Understanding layoff trends is essential for mitigating negative impacts and ensuring business continuity. By leveraging data-driven insights, organizations can develop more resilient workforce strategies and better prepare for economic uncertainties.
 
 ### Dataset Description
-The primary dataset used for this analysis is the "layoffs.csv" file, containing detailed information on layoffs from multiple companies worldwide. Each record in the dataset represents a layoff event and includes the following key attributes:
+The primary dataset used for this analysis is the "layoffs.csv" file, containing detailed information on [layoffs from multiple companies worldwide](https://layoffstracker.com/). Each record in the dataset represents a layoff event and includes the following key attributes:
   1.	Company: The name of the company where the layoffs occurred.
   2.	Location: The specific location (city) of the company.
   3.	Industry: The industry in which the company operates.
