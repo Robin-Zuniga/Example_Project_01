@@ -46,11 +46,17 @@ EDA involved exploring the layoffs data to answer key questions, such as:
 ### Insights
 The analysis results are summarized as follows:
 1. **Yearly Increase:** There is a noticeable upward trend in the total number of layoffs over the years. This trend might reflect broader economic conditions, changes in industry landscapes.
+
+![Total Layoffs Over Time](https://github.com/Robin-Zuniga/Example_Project_01/assets/157915112/1fc02b77-ee8e-46ec-a156-f6622a1ff16e)
+
 2. **Monthly Variations:** Layoffs are not evenly distributed throughout the year. Certain months experience significantly higher layoffs compared to others. Specifically in **January** and **November** layoffs are higher than average.
     - Layoffs in January and November can be particularly high due to several key reasons:
       - End of Fiscal Year Adjustments
       - Performance Reviews and Contract Endings
       - Tax and Financial Reporting
+
+![Total Layoffs by Month](https://github.com/Robin-Zuniga/Example_Project_01/assets/157915112/113b3f7c-1aed-4b3f-a478-e9f9ab22e6ff)
+
 3. The **industries** experiencing the highest number of layoffs, according to the data, include **Consumer, Retail, Other, and Transportation**. Here are potential causes for the high number of layoffs in these industries:
     - **Consumer Industry:**
       - Market Saturation: High competition and market saturation can lead to decreased sales and profits, prompting companies to cut costs.
@@ -342,4 +348,64 @@ DROP TABLE IF EXISTS layoffs_c1_no_duplicates;
 DROP TABLE IF EXISTS layoffs_c2_standardized;
 DROP TABLE IF EXISTS layoffs_c3_null_values;
 -- ----------------------------------------------- --
+```
+#### Python Code for Data Analysis & Visualization
+``` python
+# Install necessary packages (if running in a new environment)
+!pip install pandas matplotlib
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the data
+file_path = 'C:\Users\User\Desktop\Data_Project_LAYOFFS\layoffs_c4_cleaned_data.csv'  # Update with your file path
+layoffs_data = pd.read_csv(file_path)
+
+# Display the first few rows of the dataframe to understand its structure
+layoffs_data.head()
+
+# Convert the 'date' column to datetime format
+layoffs_data['date'] = pd.to_datetime(layoffs_data['date'])
+
+# Group the data by date and sum the total_laid_off
+layoffs_trends = layoffs_data.groupby('date')['total_laid_off'].sum().reset_index()
+
+# Plotting the trends over time
+plt.figure(figsize=(12, 6))
+plt.plot(layoffs_trends['date'], layoffs_trends['total_laid_off'], marker='o')
+plt.title('Total Layoffs Over Time')
+plt.xlabel('Date')
+plt.ylabel('Total Laid Off')
+plt.grid(True)
+plt.show()
+```
+``` python
+# Extract month and year from the date column
+layoffs_data['year'] = layoffs_data['date'].dt.year
+layoffs_data['month'] = layoffs_data['date'].dt.month
+
+# Group by month to find the total layoffs per month
+monthly_layoffs = layoffs_data.groupby('month')['total_laid_off'].sum().reset_index()
+
+# Plotting the total layoffs per month
+plt.figure(figsize=(12, 6))
+plt.bar(monthly_layoffs['month'], monthly_layoffs['total_laid_off'], color='orange')
+plt.title('Total Layoffs by Month')
+plt.xlabel('Month')
+plt.ylabel('Total Laid Off')
+plt.xticks(monthly_layoffs['month'])
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.show()
+```
+``` python
+# Group the data by industry and sum the total_laid_off
+industry_layoffs = layoffs_data.groupby('industry')['total_laid_off'].sum().reset_index()
+
+# Sort the industries by the total number of layoffs in descending order
+industry_layoffs = industry_layoffs.sort_values(by='total_laid_off', ascending=False)
+
+# Display the top industries with the highest number of layoffs
+import ace_tools as tools; tools.display_dataframe_to_user(name="Industries with Highest Number of Layoffs", dataframe=industry_layoffs.head(10))
+
+industry_layoffs.head(10)
 ```
