@@ -32,10 +32,10 @@ The primary dataset used for this analysis is the "layoffs.csv" file, containing
 - Python - Data Analysis & Viz
 
 ### Data Processing
-  1. Remove Duplicates
-  2. Standardize the Data
-  3. Examine Null Values and blank Data
-  4. Remove Any Unnecessary Columns and Rows
+  1. Remove duplicates
+  2. Standardize the data
+  3. Examine null values and blank data
+  4. Remove any unnecessary columns and rows
 
 ### Exploratory Data Analysis
 EDA involved exploring the layoffs data to answer key questions, such as:
@@ -45,7 +45,7 @@ EDA involved exploring the layoffs data to answer key questions, such as:
 
 ### Insights
 The analysis results are summarized as follows:
-1. **Yearly Increase:** There is a noticeable upward trend in the total number of layoffs over the years. This trend might reflect broader economic conditions, changes in industry landscapes.
+1. **Yearly Increase:** There is a noticeable upward trend in the total number of layoffs over the years. This trend might reflect broader economic conditions and changes in industry landscapes.
 
 ![Total Layoffs Over Time](https://github.com/Robin-Zuniga/Example_Project_01/assets/157915112/1fc02b77-ee8e-46ec-a156-f6622a1ff16e)
 
