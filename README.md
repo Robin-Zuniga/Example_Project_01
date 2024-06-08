@@ -361,61 +361,103 @@ DROP TABLE IF EXISTS layoffs_c3_null_values;
 ```
 #### Python Code for Data Analysis & Visualization
 ``` python
-# Install necessary packages (if running in a new environment)
-!pip install pandas matplotlib
-
+# import library
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 
 # Load the data
-file_path = 'C:\Users\User\Desktop\Data_Project_LAYOFFS\layoffs_c4_cleaned_data.csv'  # Update with your file path
+file_path = '/content/layoffs_c4_cleaned_data.csv'
 layoffs_data = pd.read_csv(file_path)
-
-# Display the first few rows of the dataframe to understand its structure
-layoffs_data.head()
-
+```
+``` python
 # Convert the 'date' column to datetime format
 layoffs_data['date'] = pd.to_datetime(layoffs_data['date'])
 
 # Group the data by date and sum the total_laid_off
 layoffs_trends = layoffs_data.groupby('date')['total_laid_off'].sum().reset_index()
 
-# Plotting the trends over time
-plt.figure(figsize=(12, 6))
-plt.plot(layoffs_trends['date'], layoffs_trends['total_laid_off'], marker='o')
-plt.title('Total Layoffs Over Time')
-plt.xlabel('Date')
-plt.ylabel('Total Laid Off')
-plt.grid(True)
+# Plotting the graph with enhancements and dark background
+plt.figure(figsize=(14, 8), facecolor='#1A1A1A')
+
+# Adding a smoothed line plot
+layoffs_trends.set_index('date')['total_laid_off'].rolling(window=7).mean().plot(
+    style='-', lw=3, color='#1f77b4', label='7-day Moving Average', alpha=0.8)
+
+# Adding scatter plot for actual data points
+plt.scatter(layoffs_trends['date'], layoffs_trends['total_laid_off'], color='#ff7f0e', alpha=0.8, label='Actual Data', s=20)
+
+# Adding vertical lines for significant events
+plt.axvline(pd.to_datetime('2022-02-24'), color='red', linestyle='--', lw=2, label='War in Ukraine')
+plt.axvline(pd.to_datetime('2022-11-30'), color='green', linestyle='--', lw=2, label='Release of ChatGPT')
+
+# Adding titles and labels
+plt.title('Total Layoffs Over Time', fontsize=16, color='white')
+plt.xlabel('Date', fontsize=14, color='white')
+plt.ylabel('Total Laid Off', fontsize=14, color='white')
+plt.grid(True, which='both', linestyle='--', linewidth=0.5, alpha=0.5)
+
+# Formatting x-axis for better readability
+plt.gca().xaxis.set_major_locator(mdates.MonthLocator(interval=1))
+plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))
+plt.xticks(rotation=45, color='white')
+plt.yticks(color='white')
+
+# Adding legend
+legend = plt.legend(facecolor='#1A1A1A', edgecolor='white', fontsize=12)
+for text in legend.get_texts():
+    text.set_color('white')
+
+# Annotating the events with increased distance
+plt.text(pd.to_datetime('2022-02-24') - pd.Timedelta(days=15), max(layoffs_trends['total_laid_off']) * 0.9, 
+         'War in Ukraine', color='red', fontsize=12, ha='right')
+plt.text(pd.to_datetime('2022-11-30') - pd.Timedelta(days=15), max(layoffs_trends['total_laid_off']) * 0.9, 
+         'Release of ChatGPT', color='green', fontsize=12, ha='right')
+
+# Set plot background color
+plt.gca().set_facecolor('#1A1A1A')
+
+# Save the plot with a dark background
+plt.savefig('/content/total_layoffs_over_time.png', facecolor='#1A1A1A')
+
+# Show plot
 plt.show()
 ```
 ``` python
-# Extract month and year from the date column
-layoffs_data['year'] = layoffs_data['date'].dt.year
+# Convert the 'date' column to datetime format
+layoffs_data['date'] = pd.to_datetime(layoffs_data['date'])
+
+# Extract month from the date column
 layoffs_data['month'] = layoffs_data['date'].dt.month
 
 # Group by month to find the total layoffs per month
 monthly_layoffs = layoffs_data.groupby('month')['total_laid_off'].sum().reset_index()
 
-# Plotting the total layoffs per month
-plt.figure(figsize=(12, 6))
-plt.bar(monthly_layoffs['month'], monthly_layoffs['total_laid_off'], color='orange')
-plt.title('Total Layoffs by Month')
-plt.xlabel('Month')
-plt.ylabel('Total Laid Off')
-plt.xticks(monthly_layoffs['month'])
-plt.grid(axis='y', linestyle='--', alpha=0.7)
+# Month names for x-axis
+months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+# Plotting the total layoffs per month with enhancements and dark background
+plt.figure(figsize=(14, 8), facecolor='#1A1A1A')
+
+# Creating the bar plot with orange color
+plt.bar(monthly_layoffs['month'], monthly_layoffs['total_laid_off'], color='#ff7f0e', alpha=0.8)
+
+# Adding titles and labels
+plt.title('Total Layoffs by Month', fontsize=16, color='white')
+plt.xlabel('Month', fontsize=14, color='white')
+plt.ylabel('Total Laid Off', fontsize=14, color='white')
+plt.grid(True, axis='y', linestyle='--', linewidth=0.5, alpha=0.5)
+
+# Formatting x-axis for better readability
+plt.xticks(monthly_layoffs['month'], months, rotation=45, color='white')
+plt.yticks(color='white')
+
+# Set plot background color
+plt.gca().set_facecolor('#1A1A1A')
+
+# Save the plot with a dark background
+plt.savefig('/content/monthly_layoffs.png', facecolor='#1A1A1A')
+
+# Show plot
 plt.show()
-```
-``` python
-# Group the data by industry and sum the total_laid_off
-industry_layoffs = layoffs_data.groupby('industry')['total_laid_off'].sum().reset_index()
-
-# Sort the industries by the total number of layoffs in descending order
-industry_layoffs = industry_layoffs.sort_values(by='total_laid_off', ascending=False)
-
-# Display the top industries with the highest number of layoffs
-import ace_tools as tools; tools.display_dataframe_to_user(name="Industries with Highest Number of Layoffs", dataframe=industry_layoffs.head(10))
-
-industry_layoffs.head(10)
 ```
