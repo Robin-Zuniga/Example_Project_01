@@ -25,11 +25,10 @@ The primary dataset used for this analysis is the "layoffs.csv" file, containing
   9.	**Funds Raised (Millions):** The amount of funds the company has raised in millions.
 
 ### Tools
-- Excel
-- SQL - Data Cleaning
-- DBMS: MySQL
-  - [Download MySQL](https://dev.mysql.com/downloads/installer/)
-- Python - Data Analysis & Viz
+- **Excel**
+- **SQL** - Data Cleaning
+  - DBMS: MySQL --> [Download MySQL](https://dev.mysql.com/downloads/installer/)
+- **Python** - Data Analysis & Visualization
 
 ### Data Processing
   1. Remove duplicates
