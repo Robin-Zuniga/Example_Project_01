@@ -7,6 +7,7 @@
 - [Data Processing](#data-processing)
 - [Exploratory Data Analysis](#exploratory-data-analysis)
 - [Insights](#insights)
+- [Limitations](#limitations)
 - [Appendix](#appendix)
 
 ### Project Overview
