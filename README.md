@@ -30,6 +30,7 @@ The primary dataset used for this analysis is the "layoffs.csv" file, containing
 - **SQL** - Data Cleaning
   - DBMS: MySQL --> [Download MySQL](https://dev.mysql.com/downloads/installer/)
 - **Python** - Data Analysis & Visualization
+  - Environment: Google Colab --> [Use Google Colab](https://colab.research.google.com/)
 
 ### Data Processing
   1. Remove duplicates
