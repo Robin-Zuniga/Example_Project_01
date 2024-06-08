@@ -45,9 +45,9 @@ EDA involved exploring the layoffs data to answer key questions, such as:
 
 ### Insights
 The analysis results are summarized as follows:
-1. **Yearly Increase:** There is a noticeable upward trend in the total number of layoffs over the years. This trend might reflect broader economic conditions and changes in industry landscapes.
+1. **Yearly Increase:** The graph highlights how external events (like the War in Ukraine) and technological advancements (like the release of ChatGPT) can correlate with increased layoffs. It also shows a broader trend of rising layoffs in the latter part of the period studied, indicating a period of economic adjustment and instability. Companies and policymakers can use such insights to better understand and potentially mitigate the impacts of these events on the labor market.
 
-![Total Layoffs Over Time](https://github.com/Robin-Zuniga/Example_Project_01/assets/157915112/1fc02b77-ee8e-46ec-a156-f6622a1ff16e)
+![total_layoffs_over_time](https://github.com/Robin-Zuniga/Example_Project_01/assets/157915112/4ff5f828-e14c-483c-9b5d-4ec1763895d0)
 
 2. **Monthly Variations:** Layoffs are not evenly distributed throughout the year. Certain months experience significantly higher layoffs compared to others. Specifically in **January** and **November** layoffs are higher than average.
     - Layoffs in January and November can be particularly high due to several key reasons:
@@ -55,7 +55,8 @@ The analysis results are summarized as follows:
       - Performance Reviews and Contract Endings
       - Tax and Financial Reporting
 
-![Total Layoffs by Month](https://github.com/Robin-Zuniga/Example_Project_01/assets/157915112/113b3f7c-1aed-4b3f-a478-e9f9ab22e6ff)
+![monthly_layoffs](https://github.com/Robin-Zuniga/Example_Project_01/assets/157915112/7fa83f15-25a5-4b0a-a230-bfde5afcb54f)
+
 
 3. The **industries** experiencing the highest number of layoffs, according to the data, include **Consumer, Retail, Other, and Transportation**. Here are potential causes for the high number of layoffs in these industries:
     - **Consumer Industry:**
