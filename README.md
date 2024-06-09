@@ -58,7 +58,6 @@ The analysis results are summarized as follows:
 
 ![monthly_layoffs](https://github.com/Robin-Zuniga/Example_Project_01/assets/157915112/7fa83f15-25a5-4b0a-a230-bfde5afcb54f)
 
-
 3. The **industries** experiencing the highest number of layoffs, according to the data, include **Consumer, Retail, Other, and Transportation**. Here are potential causes for the high number of layoffs in these industries:
     - **Consumer Industry:**
       - *Market Saturation:* High competition and market saturation can lead to decreased sales and profits, prompting companies to cut costs.
@@ -73,6 +72,8 @@ The analysis results are summarized as follows:
      - *Economic Cycles:* The transportation sector is closely tied to economic cycles. Economic slowdowns can reduce demand for transportation services.
      - *Fuel Prices:* Fluctuations in fuel prices can impact profitability, leading to cost-cutting measures including layoffs.
      - *Technological Changes:* Automation and technological advancements can reduce the need for certain types of labor in transportation.
+
+       ![industry_layoffs_pie_chart](https://github.com/Robin-Zuniga/Example_Project_01/assets/157915112/7e5213ba-82e4-4342-9e2e-2b06a28bb64c)
 
 ### Limitations
   1. **Incomplete Data:** Some entries in the dataset have missing values, particularly in the 'percentage_laid_off' column. This can skew the analysis and lead to incomplete or inaccurate insights.
@@ -457,6 +458,59 @@ plt.gca().set_facecolor('#1A1A1A')
 
 # Save the plot with a dark background
 plt.savefig('/content/monthly_layoffs.png', facecolor='#1A1A1A')
+
+# Show plot
+plt.show()
+```
+``` python
+# Group by industry to find the total layoffs per industry
+industry_layoffs = layoffs_data.groupby('industry')['total_laid_off'].sum().reset_index()
+
+# Get the top industries by layoffs
+top_industries = industry_layoffs.sort_values(by='total_laid_off', ascending=False).head(10)
+
+# Define a set of minimalistic, matte blue tones
+colors = ['#003f5c', '#2f4b7c', '#665191', '#a05195', '#d45087', '#f95d6a', '#ff7c43', '#ffa600', '#ffd700', '#b6d700']
+
+# Plotting the pie chart for industries with the highest number of layoffs
+plt.figure(figsize=(14, 8), facecolor='#1A1A1A')
+
+# Creating the pie chart with the chosen color scheme and custom design choices
+wedges, texts, autotexts = plt.pie(
+    top_industries['total_laid_off'], 
+    labels=top_industries['industry'], 
+    colors=colors, 
+    autopct='%1.1f%%', 
+    startangle=140, 
+    pctdistance=0.85, 
+    wedgeprops={'edgecolor': 'white', 'linewidth': 2}
+)
+
+# Customizing the text for a clean and futuristic look
+for text in texts:
+    text.set_color('white')
+    text.set_fontsize(12)
+    text.set_fontweight('bold')
+for autotext in autotexts:
+    autotext.set_color('white')
+    autotext.set_fontsize(10)
+    autotext.set_fontweight('bold')  # Make the numbers bold
+
+# Adding a title
+plt.title('Industries with the Highest Number of Layoffs', fontsize=18, color='white', fontweight='bold')
+
+# Adding a circle at the center to make it a donut chart
+centre_circle = plt.Circle((0, 0), 0.70, fc='#1A1A1A', edgecolor='white', linewidth=2)
+plt.gca().add_artist(centre_circle)
+
+# Ensuring the pie chart is drawn as a circle
+plt.gca().set_aspect('equal')
+
+# Set plot background color
+plt.gca().set_facecolor('#1A1A1A')
+
+# Save the plot with a dark background
+plt.savefig('/content/industry_layoffs_pie_chart.png', facecolor='#1A1A1A')
 
 # Show plot
 plt.show()
