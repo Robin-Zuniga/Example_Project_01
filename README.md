@@ -73,7 +73,7 @@ The analysis results are summarized as follows:
      - *Fuel Prices:* Fluctuations in fuel prices can impact profitability, leading to cost-cutting measures including layoffs.
      - *Technological Changes:* Automation and technological advancements can reduce the need for certain types of labor in transportation.
 
-       ![industry_layoffs_pie_chart](https://github.com/Robin-Zuniga/Example_Project_01/assets/157915112/7e5213ba-82e4-4342-9e2e-2b06a28bb64c)
+	![industry_layoffs_pie_chart](https://github.com/Robin-Zuniga/Example_Project_01/assets/157915112/7e5213ba-82e4-4342-9e2e-2b06a28bb64c)
 
 ### Limitations
   1. **Incomplete Data:** Some entries in the dataset have missing values, particularly in the 'percentage_laid_off' column. This can skew the analysis and lead to incomplete or inaccurate insights.
