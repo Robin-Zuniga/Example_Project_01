@@ -41,7 +41,7 @@ The primary dataset used for this analysis is the "layoffs.csv" file, containing
 ### Exploratory Data Analysis
 EDA involved exploring the layoffs data to answer key questions, such as:
   1. What are the overall trends in layoffs over time?
-  2. Are layoffs more frequent in specific months or seasons?
+  2. Are layoffs more frequent in specific months?
   3. Which industries are experiencing the highest number of layoffs?
 
 ### Insights
