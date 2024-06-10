@@ -51,7 +51,7 @@ The analysis results are summarized as follows:
 
 	The 7-day moving average is used to smooth out daily fluctuations, providing a clearer view of the underlying trends and making it easier to identify significant changes over time.
 	``` python
-	# Calculate and plot the 7-day moving average of the 'total_laid_off'
+	# Calculate and plot the 7-day moving average of the 'total_laid_off' column
 	layoffs_trends.set_index('date')['total_laid_off'].rolling(window=7).mean().plot(
 	    style='-', lw=3, color='#1f77b4', label='7-day Moving Average', alpha=0.8)
 	```
