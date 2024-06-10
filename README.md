@@ -45,6 +45,8 @@ EDA involved exploring the layoffs data to answer key questions, such as:
   3. Which industries are experiencing the highest number of layoffs?
 
 ### Insights
+The dataset on worldwide layoffs provides a comprehensive view of job cuts across various industries and regions. It includes data from **51 countries**, involving **1272 companies** over a period of **3 years and 3 months**. The analysis aims to shed light on the trends and impacts of these layoffs on a global scale. On **average**, the number of layoffs per company is approximately **514**, reflecting significant workforce reductions across diverse sectors.
+
 The analysis results are summarized as follows:
 1. **Yearly Increase:** The graph highlights how external events (like the War in Ukraine) and technological advancements (like the release of ChatGPT) can correlate with increased layoffs. It also shows a broader trend of rising layoffs in the latter part of the period studied, indicating a period of economic adjustment and instability. The 7-day moving average is used to smooth out daily fluctuations, providing a clearer view of the underlying trends and making it easier to identify significant changes over time. Companies and policymakers can use such insights to better understand and potentially mitigate the impacts of these events on the labor market.
 
