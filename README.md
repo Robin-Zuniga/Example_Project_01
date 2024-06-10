@@ -48,7 +48,7 @@ EDA involved exploring the layoffs data to answer key questions, such as:
 The analysis results are summarized as follows:
 1. **Yearly Increase:** The graph highlights how external events (like the War in Ukraine) and technological advancements (like the release of ChatGPT) can correlate with increased layoffs. It also shows a broader trend of rising layoffs in the latter part of the period studied, indicating a period of economic adjustment and instability. Companies and policymakers can use such insights to better understand and potentially mitigate the impacts of these events on the labor market.
 
-![total_layoffs_over_time](https://github.com/Robin-Zuniga/Example_Project_01/assets/157915112/4ff5f828-e14c-483c-9b5d-4ec1763895d0)
+![total_layoffs_over_time](https://github.com/Robin-Zuniga/Example_Project_01/assets/157915112/8832e292-f5e2-4c5e-898f-a695aa0d429a)
 
 2. **Monthly Variations:** Layoffs are not evenly distributed throughout the year. Certain months experience significantly higher layoffs compared to others. Specifically in **January** and **November** layoffs are higher than average.
     - Layoffs in January and November can be particularly high due to several key reasons:
@@ -56,7 +56,7 @@ The analysis results are summarized as follows:
       - Performance Reviews and Contract Endings
       - Tax and Financial Reporting
 
-![monthly_layoffs](https://github.com/Robin-Zuniga/Example_Project_01/assets/157915112/7fa83f15-25a5-4b0a-a230-bfde5afcb54f)
+![monthly_layoffs](https://github.com/Robin-Zuniga/Example_Project_01/assets/157915112/ab9f93bc-037c-4cf9-ab84-387f44247f68)
 
 3. The **industries** experiencing the highest number of layoffs, according to the data, include **Consumer, Retail, Other, and Transportation**. Here are potential causes for the high number of layoffs in these industries:
     - **Consumer Industry:**
