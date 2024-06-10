@@ -46,7 +46,7 @@ EDA involved exploring the layoffs data to answer key questions, such as:
 
 ### Insights
 The analysis results are summarized as follows:
-1. **Yearly Increase:** The graph highlights how external events (like the War in Ukraine) and technological advancements (like the release of ChatGPT) can correlate with increased layoffs. It also shows a broader trend of rising layoffs in the latter part of the period studied, indicating a period of economic adjustment and instability. Companies and policymakers can use such insights to better understand and potentially mitigate the impacts of these events on the labor market.
+1. **Yearly Increase:** The graph highlights how external events (like the War in Ukraine) and technological advancements (like the release of ChatGPT) can correlate with increased layoffs. It also shows a broader trend of rising layoffs in the latter part of the period studied, indicating a period of economic adjustment and instability. The 7-day moving average is used to smooth out daily fluctuations, providing a clearer view of the underlying trends and making it easier to identify significant changes over time. Companies and policymakers can use such insights to better understand and potentially mitigate the impacts of these events on the labor market.
 
 ![total_layoffs_over_time](https://github.com/Robin-Zuniga/Example_Project_01/assets/157915112/8832e292-f5e2-4c5e-898f-a695aa0d429a)
 
